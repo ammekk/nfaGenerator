@@ -1,0 +1,5 @@
+[0m[[0m[33mwarn[0m] [0m[0m/Users/ekel/Desktop/Old Research/research/PDAcoded/src/main/scala/PDACodedParser.scala:26:13: match may not be exhaustive.[0m
+[0m[[0m[33mwarn[0m] [0m[0mIt would fail on the following inputs: Error(_, _), Failure(_, _)[0m
+[0m[[0m[33mwarn[0m] [0m[0m    parseAll(pda, new CharSequenceReader(code)) match {[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mone warning found[0m

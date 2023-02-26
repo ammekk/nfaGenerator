@@ -1,0 +1,10 @@
+q: { push empty; spawn q1; }
+q1: if ( read a ) then { push a; loop; }
+      if ( read b ) then { push b; loop; }
+      if ( read a ) then { spawn q2; }
+      if ( read b ) then { spawn q; }
+q2: if ( read a and pop a ) then { loop; }
+      if ( read b and pop b ) then { loop; }
+      if ( pop empty ) then { spawn q3; }
+q3:  return true;
+q6: {}
