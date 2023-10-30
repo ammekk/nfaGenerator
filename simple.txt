@@ -1,4 +1,0 @@
-q1: { push empty; q2(); }
-q2: if ( read c and pop o ) then { q2(); }
-      if ( read o ) then { push o; q2(); }
-      If ( pop empty ) then { q3(); }

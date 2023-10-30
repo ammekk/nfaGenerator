@@ -1,0 +1,11 @@
+*.txt
+*.DS_Store
+*..
+*.pdf
+*.9.png
+get-pip.py
+.
+*.edu
+*.ed
+test/
+*.bsp

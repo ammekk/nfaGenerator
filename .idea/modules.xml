@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/PDAcoded.iml" filepath="$PROJECT_DIR$/.idea/modules/PDAcoded.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/PDAcoded-build.iml" filepath="$PROJECT_DIR$/.idea/modules/PDAcoded-build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/nfaGenerator.iml" filepath="$PROJECT_DIR$/.idea/modules/nfaGenerator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/nfaGenerator-build.iml" filepath="$PROJECT_DIR$/.idea/modules/nfaGenerator-build.iml" />
     </modules>
   </component>
 </project>

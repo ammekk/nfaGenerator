@@ -1,0 +1,1 @@
+{"start_state":"0","accepted_states":["3"],"edges":[{"src":"0","dst":"1","char":""},{"src":"1","dst":"3","char":"0"},{"src":"1","dst":"2","char":"1"},{"src":"1","dst":"2","char":"0"},{"src":"2","dst":"3","char":"0"},{"src":"2","dst":"2","char":"1"},{"src":"2","dst":"2","char":"0"}]}

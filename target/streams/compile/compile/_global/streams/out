@@ -1,5 +1,11 @@
-[0m[[0m[33mwarn[0m] [0m[0m/Users/ekel/Desktop/Old Research/research/PDAcoded/src/main/scala/PDACodedParser.scala:26:13: match may not be exhaustive.[0m
-[0m[[0m[33mwarn[0m] [0m[0mIt would fail on the following inputs: Error(_, _), Failure(_, _)[0m
-[0m[[0m[33mwarn[0m] [0m[0m    parseAll(pda, new CharSequenceReader(code)) match {[0m
-[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
-[0m[[0m[33mwarn[0m] [0m[0mone warning found[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/ekel/Desktop/research/nfaGenerator/src/main/scala/Simplify.scala:94:24: value += is not a member of List[(String, String, Bool)][0m
+[0m[[0m[31merror[0m] [0m[0m  Expression does not convert to assignment because:[0m
+[0m[[0m[31merror[0m] [0m[0m    type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m     found   : List[(String, String, AndBool)][0m
+[0m[[0m[31merror[0m] [0m[0m     required: String[0m
+[0m[[0m[31merror[0m] [0m[0m    expansion: newTransitions = newTransitions.$plus(outGoingEdges.map(<empty> match {[0m
+[0m[[0m[31merror[0m] [0m[0m  case scala.Tuple2((nextNode @ _), (nextCondition @ _)) => scala.Tuple3(node, nextNode, AndBool(condition, nextCondition))[0m
+[0m[[0m[31merror[0m] [0m[0m}))[0m
+[0m[[0m[31merror[0m] [0m[0m        newTransitions += outGoingEdges.map{ case(nextNode, nextCondition) => ((node, nextNode, AndBool(condition, nextCondition)))}[0m
+[0m[[0m[31merror[0m] [0m[0m                       ^[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m
