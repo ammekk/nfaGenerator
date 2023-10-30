@@ -1,5 +1,4 @@
 *.txt
-*.DS_Store
 *..
 *.pdf
 *.9.png
@@ -9,3 +8,4 @@ get-pip.py
 *.ed
 test/
 *.bsp
+*.rtf
