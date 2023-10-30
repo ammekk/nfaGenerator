@@ -1,17 +1,23 @@
 [0m[[0m[0mdebug[0m] [0m[0mCreated transactional ClassFileManager with tempDir = /Users/ekel/Desktop/research/nfaGenerator/target/scala-2.13/classes.bak[0m
 [0m[[0m[0mdebug[0m] [0m[0mAbout to delete class files:[0m
 [0m[[0m[0mdebug[0m] [0m[0m	Graph$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	ExtendedBooleanNFA.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	Simplify$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	Graph.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	Simplify.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	ExtendedBooleanNFA$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0mWe backup class files:[0m
 [0m[[0m[0mdebug[0m] [0m[0m	Graph$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	ExtendedBooleanNFA.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	Simplify$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	Graph.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	Simplify.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	ExtendedBooleanNFA$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0mRegistering generated classes:[0m
-[0m[[0m[0mdebug[0m] [0m[0m	Graph.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	Graph$.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	Simplify.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	ExtendedBooleanNFA.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	Simplify$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Graph.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Simplify.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	ExtendedBooleanNFA$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0mRemoving the temporary directory used for backing up class files: /Users/ekel/Desktop/research/nfaGenerator/target/scala-2.13/classes.bak[0m

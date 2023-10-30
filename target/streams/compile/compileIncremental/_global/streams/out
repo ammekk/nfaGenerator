@@ -1,6 +1,6 @@
 [0m[[0m[0mdebug[0m] [0m[0m[zinc] IncrementalCompile -----------[0m
 [0m[[0m[0mdebug[0m] [0m[0mIncrementalCompile.incrementalCompile[0m
-[0m[[0m[0mdebug[0m] [0m[0mprevious = Stamps for: 107 products, 10 sources, 5 libraries[0m
+[0m[[0m[0mdebug[0m] [0m[0mprevious = Stamps for: 109 products, 10 sources, 5 libraries[0m
 [0m[[0m[0mdebug[0m] [0m[0mcurrent source = Set(${BASE}/src/main/scala/MinimizedGraph.scala, ${BASE}/src/main/scala/Main.scala, ${BASE}/src/main/scala/ControlFlowGraph.scala, ${BASE}/src/main/scala/ControlFlowGraphSinglePass.scala, ${BASE}/src/main/scala/MinimizeFunctions.scala, ${BASE}/src/main/scala/Parser.scala, ${BASE}/src/main/scala/Simplify.scala, ${BASE}/src/main/scala/SimplifiedControlFlowGraph.scala, ${BASE}/src/main/scala/toJson.scala, ${BASE}/src/main/scala/NFAGraph.scala)[0m
 [0m[[0m[0mdebug[0m] [0m[0m> initialChanges = InitialChanges(Changes(added = Set(), removed = Set(), changed = Set(${BASE}/src/main/scala/Simplify.scala), unmodified = ...),Set(),Set(),API Changes: Set())[0m
 [0m[[0m[0mdebug[0m] [0m[0m[0m
@@ -11,18 +11,18 @@
 [0m[[0m[0mdebug[0m] [0m[0mInvalidated products: Set()[0m
 [0m[[0m[0mdebug[0m] [0m[0mExternal API changes: API Changes: Set()[0m
 [0m[[0m[0mdebug[0m] [0m[0mModified binary dependencies: Set()[0m
-[0m[[0m[0mdebug[0m] [0m[0mInitial directly invalidated classes: Set(Graph, Simplify)[0m
+[0m[[0m[0mdebug[0m] [0m[0mInitial directly invalidated classes: Set(Graph, Simplify, ExtendedBooleanNFA)[0m
 [0m[[0m[0mdebug[0m] [0m[0mSources indirectly invalidated by:[0m
 [0m[[0m[0mdebug[0m] [0m[0m	product: Set()[0m
 [0m[[0m[0mdebug[0m] [0m[0m	binary dep: Set()[0m
 [0m[[0m[0mdebug[0m] [0m[0m	external source: Set()[0m
-[0m[[0m[0mdebug[0m] [0m[0mAll initially invalidated classes: Set(Graph, Simplify)[0m
+[0m[[0m[0mdebug[0m] [0m[0mAll initially invalidated classes: Set(Graph, Simplify, ExtendedBooleanNFA)[0m
 [0m[[0m[0mdebug[0m] [0m[0mAll initially invalidated sources:Set(${BASE}/src/main/scala/Simplify.scala)[0m
-[0m[[0m[0mdebug[0m] [0m[0mInitial set of included nodes: Graph, Simplify[0m
+[0m[[0m[0mdebug[0m] [0m[0mInitial set of included nodes: Graph, Simplify, ExtendedBooleanNFA[0m
 [0m[[0m[0mdebug[0m] [0m[0mcompilation cycle 1[0m
 [0m[[0m[0minfo[0m] [0m[0mcompiling 1 Scala source to /Users/ekel/Desktop/research/nfaGenerator/target/scala-2.13/classes ...[0m
 [0m[[0m[0mdebug[0m] [0m[0mGetting org.scala-sbt:compiler-bridge_2.13:1.6.0:compile for Scala 2.13.8[0m
-[0m[[0m[0mdebug[0m] [0m[0m[zinc] Running cached compiler 45437ebc for Scala compiler version 2.13.8[0m
+[0m[[0m[0mdebug[0m] [0m[0m[zinc] Running cached compiler 5d2cff0 for Scala compiler version 2.13.8[0m
 [0m[[0m[0mdebug[0m] [0m[0m[zinc] The Scala compiler is invoked with:[0m
 [0m[[0m[0mdebug[0m] [0m[0m	-bootclasspath[0m
 [0m[[0m[0mdebug[0m] [0m[0m	/Users/ekel/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.8/scala-library-2.13.8.jar[0m
@@ -34,5 +34,5 @@
 [0m[[0m[0mdebug[0m] [0m[0mFinal step, transitive dependencies:[0m
 [0m[[0m[0mdebug[0m] [0m[0m	Set()[0m
 [0m[[0m[0mdebug[0m] [0m[0mNo classes were invalidated.[0m
-[0m[[0m[0mdebug[0m] [0m[0mScala compilation took 2.537980499 s[0m
+[0m[[0m[0mdebug[0m] [0m[0mScala compilation took 2.694152832 s[0m
 [0m[[0m[0mdebug[0m] [0m[0mdone compiling[0m

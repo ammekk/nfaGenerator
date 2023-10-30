@@ -1,11 +1,4 @@
-[0m[[0m[31merror[0m] [0m[0m/Users/ekel/Desktop/research/nfaGenerator/src/main/scala/Simplify.scala:94:24: value += is not a member of List[(String, String, Bool)][0m
-[0m[[0m[31merror[0m] [0m[0m  Expression does not convert to assignment because:[0m
-[0m[[0m[31merror[0m] [0m[0m    type mismatch;[0m
-[0m[[0m[31merror[0m] [0m[0m     found   : List[(String, String, AndBool)][0m
-[0m[[0m[31merror[0m] [0m[0m     required: String[0m
-[0m[[0m[31merror[0m] [0m[0m    expansion: newTransitions = newTransitions.$plus(outGoingEdges.map(<empty> match {[0m
-[0m[[0m[31merror[0m] [0m[0m  case scala.Tuple2((nextNode @ _), (nextCondition @ _)) => scala.Tuple3(node, nextNode, AndBool(condition, nextCondition))[0m
-[0m[[0m[31merror[0m] [0m[0m}))[0m
-[0m[[0m[31merror[0m] [0m[0m        newTransitions += outGoingEdges.map{ case(nextNode, nextCondition) => ((node, nextNode, AndBool(condition, nextCondition)))}[0m
-[0m[[0m[31merror[0m] [0m[0m                       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/ekel/Desktop/research/nfaGenerator/src/main/scala/Simplify.scala:101:11: unbound placeholder parameter[0m
+[0m[[0m[31merror[0m] [0m[0m          _[0m
+[0m[[0m[31merror[0m] [0m[0m          ^[0m
 [0m[[0m[31merror[0m] [0m[0mone error found[0m

@@ -2,16 +2,16 @@ import java.io.{BufferedWriter, File, FileWriter}
 import scala.collection.immutable.HashMap
 import scala.collection.mutable.ListBuffer
 
-case class Graph(graph: List[(String, String, Bool)], idToNode: HashMap[String, Node]) {
-  def visualizeGraph(): Unit = {
-    val file = new File("NewSimplifiedGraph.gv.txt")
+case class ExtendedBooleanNFA(connections: List[(String, String, Bool)], idToNode: HashMap[String, Node], startNodes: Option[String]) {
+  def visualizeGraph(filename: String): Unit = {
+    val file = new File(filename + ".gv.txt")
     val bw = new BufferedWriter(new FileWriter(file))
-    val concatenate_graph = "digraph control_flow_graph {\n \tfontname=\"Helvetica,Arial,sans-serif\"\n" +
+    val concatenate_extended_boolean_nfa = "digraph " + filename + " {\n \tfontname=\"Helvetica,Arial,sans-serif\"\n" +
       "\tnode [fontname=\"Helvetica,Arial,sans-serif\"]\n" + "\tedge [fontname=\"Helvetica,Arial,sans-serif\"]\n" +
       "\trankdir=LR;\n" + "\tnode [shape = circle];\n"
-    var hashmap = ""
-    graph.foreach { case (node, connection, condition) =>  hashmap += node + " -> " + connection + "" + getLabel(condition) + ";\n" }
-    bw.write(concatenate_graph + hashmap + "}")
+    var list = ""
+    connections.foreach { case (node, connection, condition) =>  list += node + " -> " + connection + "" + getLabel(condition) + ";\n" }
+    bw.write(concatenate_extended_boolean_nfa + list + "}")
     bw.close()
   }
 
@@ -53,8 +53,26 @@ case class Graph(graph: List[(String, String, Bool)], idToNode: HashMap[String, 
         value
     }
   }
+
+  def getOutGoingEdges(id: String): List[(String, Bool)] = {
+    val lb = ListBuffer[(String, Bool)]()
+    connections.foreach { case (node, nextNode, condition) =>
+      if (node == id) lb += ((nextNode, condition))
+    }
+    lb.toList
+  }
 }
 
+case class Graph(connections: List[(String, String, Bool)], idToNode: HashMap[String, Node]) {
+
+  def getOutGoingEdges(id: String): List[(String, Bool)] = {
+    val lb = ListBuffer[(String, Bool)]()
+    connections.foreach { case (node, nextNode, condition) =>
+      if (node == id) lb += ((nextNode, condition))
+    }
+    lb.toList
+  }
+}
 
 object Simplify {
   def convertControlFlowGraph(cfg: ControlFlowGraphSinglePass): Graph = {
@@ -70,7 +88,7 @@ object Simplify {
     val transitions = ListBuffer[(String, String, Bool)]()
     cfg.idToNode.foreach{ case (id, node) =>
       node match {
-        case Return(id, bool) =>
+        case Return(id, _) =>
           transitions += ((id, id, ValueBool(true)))
         case Continue(id, bool, next) =>
           transitions += checkForReturnAndProduceTransition(id, next, bool)
@@ -79,40 +97,31 @@ object Simplify {
         case Branch(id, bool, thenNode, elseNode, _) =>
           transitions += checkForReturnAndProduceTransition(id, thenNode, bool)
           transitions += checkForReturnAndProduceTransition(id, elseNode, ComplementBool(bool))
-        case Start(id, next) =>
-          transitions += checkForReturnAndProduceTransition(id, next, ValueBool(true))
+        case _ =>
       }}
     Graph(transitions.toList, cfg.idToNode)
   }
 
-  def getOutGoingEdges(id: String, graph: Graph): List[(String, Bool)] = {
-    val lb = ListBuffer[(String, Bool)]()
-    graph.graph.foreach { case (node, nextNode, condition) =>
-      if (node == id) lb += ((nextNode, condition))
-    }
-    lb.toList
-  }
-
   def removeNodeAndCreateNewGraph(id: String, graph: Graph): Graph = {
-    val outGoingEdges = getOutGoingEdges(id, graph)
+    val outGoingEdges = graph.getOutGoingEdges(id)
     var newTransitions = List[(String, String, Bool)]()
-    newTransitions = graph.graph.filter{ case(node, nextNode, _) => node != id && nextNode != id }
-    graph.graph.foreach{ case(node, nextNode, condition) =>
+    newTransitions = graph.connections.filter{ case(node, nextNode, _) => node != id && nextNode != id }
+    graph.connections.foreach{ case(node, nextNode, condition) =>
       if(nextNode == id) {
         newTransitions = newTransitions ++ outGoingEdges.map{ case(nextOutNode, nextCondition) => (node, nextOutNode, AndBool(condition, nextCondition))}
       }
     }
     Graph(newTransitions, graph.idToNode)
   }
-  def makeSimplifiedGraph(cfg: ControlFlowGraphSinglePass): Graph = {
+  def makeExtendedBooleanNFA(cfg: ControlFlowGraphSinglePass): ExtendedBooleanNFA = {
     val initialGraph = convertControlFlowGraph(cfg)
     val nodesToRemove = initialGraph.idToNode.keySet.toList.filter(id => id.contains("If") || id.contains("While") || id.contains("Ensure") )
-    var tempGraph = initialGraph
+    var tempBENFA = initialGraph
     nodesToRemove.foreach{ node =>
-      tempGraph = removeNodeAndCreateNewGraph(node, tempGraph)
+      tempBENFA = removeNodeAndCreateNewGraph(node, tempBENFA)
     }
-    val finalGraph = tempGraph
-    finalGraph
+    val finalBENFA = tempBENFA
+    ExtendedBooleanNFA(finalBENFA.connections, finalBENFA.idToNode, None)
   }
 
 }

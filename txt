@@ -1,6 +1,0 @@
-input = read();	
-while(true){
-	ensure(input == '0');
-}
-input = read();
-return input == EOF;

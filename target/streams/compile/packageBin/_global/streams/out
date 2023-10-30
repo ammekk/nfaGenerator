@@ -132,6 +132,8 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/ekel/Desktop/research/nfaGenerator/target/scala-2.13/classes/ValueBool$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	Read.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/ekel/Desktop/research/nfaGenerator/target/scala-2.13/classes/Read.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	ExtendedBooleanNFA$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/ekel/Desktop/research/nfaGenerator/target/scala-2.13/classes/ExtendedBooleanNFA$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	Graph.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/ekel/Desktop/research/nfaGenerator/target/scala-2.13/classes/Graph.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	Simplify$.class[0m
@@ -184,6 +186,8 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/ekel/Desktop/research/nfaGenerator/target/scala-2.13/classes/ReadInputStatement$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	Parser.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/ekel/Desktop/research/nfaGenerator/target/scala-2.13/classes/Parser.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	ExtendedBooleanNFA.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/ekel/Desktop/research/nfaGenerator/target/scala-2.13/classes/ExtendedBooleanNFA.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	NumericExpression.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/ekel/Desktop/research/nfaGenerator/target/scala-2.13/classes/NumericExpression.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	NFAStartNode$.class[0m
