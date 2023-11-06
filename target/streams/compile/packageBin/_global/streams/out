@@ -34,6 +34,8 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/ekel/Desktop/research/nfaGenerator/target/scala-2.13/classes/CharExpression$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	NFAStartNode.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/ekel/Desktop/research/nfaGenerator/target/scala-2.13/classes/NFAStartNode.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Minimize$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/ekel/Desktop/research/nfaGenerator/target/scala-2.13/classes/Minimize$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	toJsonFile$$anon$6.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/ekel/Desktop/research/nfaGenerator/target/scala-2.13/classes/toJsonFile$$anon$6.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	Branch.class[0m
@@ -174,6 +176,8 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/ekel/Desktop/research/nfaGenerator/target/scala-2.13/classes/toJsonFile$$anon$4$$anon$5.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	MinimizedReturnNode$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/ekel/Desktop/research/nfaGenerator/target/scala-2.13/classes/MinimizedReturnNode$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Minimize.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/ekel/Desktop/research/nfaGenerator/target/scala-2.13/classes/Minimize.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	Branch$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/ekel/Desktop/research/nfaGenerator/target/scala-2.13/classes/Branch$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	FlipCoinBool.class[0m
