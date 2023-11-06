@@ -1,8 +1,9 @@
+
 import java.io.{BufferedWriter, File, FileWriter}
 import scala.collection.immutable.HashMap
 import scala.collection.mutable.ListBuffer
 
-case class ExtendedBooleanNFA(connections: List[(String, String, Bool)], idToNode: HashMap[String, Node], startNodes: Option[String]) {
+case class ExtendedBooleanNFA(connections: List[(String, String, Bool)], idToNode: HashMap[String, Node], startNodes: List[String]) {
   def visualizeGraph(filename: String): Unit = {
     val file = new File(filename + ".gv.txt")
     val bw = new BufferedWriter(new FileWriter(file))
@@ -72,6 +73,20 @@ case class Graph(connections: List[(String, String, Bool)], idToNode: HashMap[St
     }
     lb.toList
   }
+
+  def getStartNodes(): List[String] = {
+    idToNode.keySet.toList.filter{ potentialInitialNode =>
+      var start = true
+      // Can a node be a start node if the only ingoing edge it has is to itself? I think so
+      // But then it complicates this because potentially start nodes can have ingoing edges
+      // as long as they are loops. For right now I am going to pretend I don't know that
+      // until I know it for sure because it makes coding this harder
+      connections.foreach{ case(node, connection, _) =>
+        if (connection == potentialInitialNode && node != potentialInitialNode) start = false
+      }
+      start
+    }
+  }
 }
 
 object Simplify {
@@ -99,19 +114,21 @@ object Simplify {
           transitions += checkForReturnAndProduceTransition(id, elseNode, ComplementBool(bool))
         case _ =>
       }}
-    Graph(transitions.toList, cfg.idToNode)
+    //Temp fix until I remove start node from control flow graph
+    Graph(transitions.toList, cfg.idToNode-("Start0"))
   }
 
   def removeNodeAndCreateNewGraph(id: String, graph: Graph): Graph = {
     val outGoingEdges = graph.getOutGoingEdges(id)
     var newTransitions = List[(String, String, Bool)]()
+    var newIDToNode = graph.idToNode.-(id)
     newTransitions = graph.connections.filter{ case(node, nextNode, _) => node != id && nextNode != id }
     graph.connections.foreach{ case(node, nextNode, condition) =>
       if(nextNode == id) {
         newTransitions = newTransitions ++ outGoingEdges.map{ case(nextOutNode, nextCondition) => (node, nextOutNode, AndBool(condition, nextCondition))}
       }
     }
-    Graph(newTransitions, graph.idToNode)
+    Graph(newTransitions, newIDToNode)
   }
   def makeExtendedBooleanNFA(cfg: ControlFlowGraphSinglePass): ExtendedBooleanNFA = {
     val initialGraph = convertControlFlowGraph(cfg)
@@ -121,7 +138,7 @@ object Simplify {
       tempBENFA = removeNodeAndCreateNewGraph(node, tempBENFA)
     }
     val finalBENFA = tempBENFA
-    ExtendedBooleanNFA(finalBENFA.connections, finalBENFA.idToNode, None)
+    ExtendedBooleanNFA(finalBENFA.connections, finalBENFA.idToNode, finalBENFA.getStartNodes())
   }
 
 }
