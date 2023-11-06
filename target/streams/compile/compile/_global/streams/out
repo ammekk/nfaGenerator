@@ -1,4 +1,5 @@
-[0m[[0m[31merror[0m] [0m[0m/Users/ekel/Desktop/research/nfaGenerator/src/main/scala/Simplify.scala:101:11: unbound placeholder parameter[0m
-[0m[[0m[31merror[0m] [0m[0m          _[0m
-[0m[[0m[31merror[0m] [0m[0m          ^[0m
-[0m[[0m[31merror[0m] [0m[0mone error found[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/ekel/Desktop/research/nfaGenerator/src/main/scala/Parser.scala:51:13: match may not be exhaustive.[0m
+[0m[[0m[33mwarn[0m] [0m[0mIt would fail on the following inputs: Error(_, _), Failure(_, _)[0m
+[0m[[0m[33mwarn[0m] [0m[0m    parseAll(nfa, new CharSequenceReader(code)) match {[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mone warning found[0m
